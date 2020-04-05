@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].js',  // 单入口：不指定filename的话，对应的生成的chunk名字是main
   },
   module: {
     rules: [
@@ -28,7 +28,7 @@ module.exports = {
   ],
   // 开发服务器配置（自动化：自动化编译，自动打开浏览器，自动刷新浏览器）
   // npm install webpack-dev-server -D
-  // 只会在内存中打包，不会在本地输出
+  // 如果使用的devServer，那么所有产出的文件都会写到内存中，而不是写到硬盘上（内存中速度快）
   // 启动命令：npx webpack-dev-server
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'), // 配置开发服务器运行时的文件根目录

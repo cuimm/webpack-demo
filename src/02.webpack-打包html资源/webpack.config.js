@@ -21,6 +21,7 @@ module.exports = {
     ],
   },
   plugins: [
+    // 这个插件的作用的产出html：在编译的时候会读取编译模版
     new HtmlWebpackPlugin({
       template: './index.html', // 指定模版文件。复制指定template对应的index.html并自动引入所有打包后的资源(js/css)
       filename: 'test.html', // 指定打包后文件名
